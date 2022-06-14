@@ -10,7 +10,7 @@ if (isset($_POST['sendMail'])) {
     $subject = $subjectName;
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= 'From: '.$email.'<'.$email.'>' . "\r\n".'Reply-To: '.$email."\r\n" . 'X-Mailer: PHP/' . phpversion();
+    $headers .= 'From: '.$fromEmail.'<'.$fromEmail.'>' . "\r\n".'Reply-To: '.$fromEmail."\r\n" . 'X-Mailer: PHP/' . phpversion();
     $message = '<!doctype html>
 			<html lang="en">
 			<head>
@@ -25,7 +25,7 @@ if (isset($_POST['sendMail'])) {
 				<div class="container">
                  '.$message.'<br/>
                     Regards<br/>
-                  '.$email.'
+                  '.$fromEmail.'
 				</div>
 			</body>
 			</html>';
